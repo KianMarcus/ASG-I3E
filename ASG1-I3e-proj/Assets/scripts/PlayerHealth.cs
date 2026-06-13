@@ -22,9 +22,11 @@ public class PlayerHealth : MonoBehaviour
  
         if (currentHealth <= 0)
         {
-            Debug.Log("Player is dead!");
+            GetComponent<PlayerDeath>().Die();
         }
     }
+
+    
  
  
     void Start()
