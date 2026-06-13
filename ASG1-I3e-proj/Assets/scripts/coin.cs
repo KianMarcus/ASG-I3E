@@ -1,15 +1,14 @@
 using UnityEngine;
 
-public class coin : MonoBehaviour
+public class Coin : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void OnTriggerEnter(Collider other)
+    public int value = 1;
+ 
+    public void Collect()
     {
-        if (other.CompareTag("Player"))
-        {
-            ScoreManager.Instance.AddPoint();
-            Destroy(gameObject);
-        }
+        ScoreManager.Instance.score += value;
+        Debug.Log("Score: " + ScoreManager.Instance.score);
+        Destroy(gameObject);
     }
-
 }
